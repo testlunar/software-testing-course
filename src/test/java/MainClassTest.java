@@ -9,4 +9,9 @@ public class MainClassTest {
     void testGetLocalNumber(){
         Assertions.assertEquals(15,mc.getLocalNumber(),"Numbers are different");
     }
+
+    @Test
+    void testGetClassNumber(){
+        Assertions.assertTrue(mc.getClassNumber()>45,"Number is <= 45");
+    }
 }
