@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Locale;
 
 public class MainClassTest {
     MainClass mc = new MainClass();
@@ -9,7 +8,7 @@ public class MainClassTest {
 
     @Test
     void testGetLocalNumber(){
-        Assertions.assertEquals(15,mc.getLocalNumber(),"Numbers are different");
+        Assertions.assertEquals(14,mc.getLocalNumber(),"Numbers are different");
     }
 
     @Test
@@ -19,9 +18,10 @@ public class MainClassTest {
 
     @Test
     void testGetClassString(){
-
-        Assertions.assertTrue(mc.getClassString().toLowerCase().contains("hello"),
-                "Text does not contain hello or Hello");
-
+        if(mc.getClassString().contains("Hello") || mc.getClassString().contains("hello")){
+            Assertions.assertTrue(true);
+        }else {
+            Assertions.assertTrue(false,"Text does not contain hello or Hello");
+        }
     }
 }
